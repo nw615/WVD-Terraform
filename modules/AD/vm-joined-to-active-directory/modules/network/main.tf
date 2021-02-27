@@ -1,6 +1,4 @@
-// NOTE: in a Production Environment you're likely to have Network Security Rules
-// which lock down traffic between Subnets. These are omited below to keep the
-// examples easy to understand - and should be added before being used in Production.
+// NOT FOR PRODUCTION
 
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
