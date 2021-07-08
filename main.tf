@@ -6,7 +6,7 @@ module "AD" {
   source = "./modules/AD"
 
   location       = var.location
-  prefix         = "wvd"
+  prefix         = "ttsu-wvd"
   admin_username = var.admin_username
   admin_password = var.admin_password
 }
