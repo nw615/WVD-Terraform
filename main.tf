@@ -15,14 +15,14 @@ module "storage" {
   source = "./modules/storage"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = "ttsu-filestor"
 }
 
 module "SIG" {
   source = "./modules/SIG"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = "ttsu-deployment"
 }
 
 module "log-analytics" {
@@ -42,7 +42,7 @@ module "wvd" {
 # Create resource group for use with Packer
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
 resource "azurerm_resource_group" "packer" {
-  name     = "packer"
+  name     = "ttsu-packer"
   location = var.location
 
   tags = {
