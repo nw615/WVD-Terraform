@@ -29,14 +29,14 @@ module "log-analytics" {
   source = "./modules/log-analytics"
 
   location = var.location
-  prefix   = "wvd"
+  prefix   = "ttsu-wvd"
 }
 
 module "wvd" {
   source = "./modules/wvd"
 
   location = var.location
-  prefix   = "wvd"
+  prefix   = "ttsu-wvd"
 }
 
 # Create resource group for use with Packer
