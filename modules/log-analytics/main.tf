@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "log" {
+data "azurerm_resource_group" "log" {
   name     = "${var.prefix}-resources"
   location = var.location
 }
