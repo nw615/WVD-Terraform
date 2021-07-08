@@ -16,8 +16,9 @@ resource "azurerm_shared_image_gallery" "sig" {
   description         = "Shared images and things."
 
   tags = {
-    Environment = "Demo"
-    Tech        = "Terraform"
+    period      = "2021-07-31"
+    owner       = "ttsukui@networld.co.jp"
+    costcenter  = "psg2"
   }
 }
 

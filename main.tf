@@ -15,14 +15,14 @@ module "storage" {
   source = "./modules/storage"
 
   location = var.location
-  prefix   = "filestor"
+  prefix   = "ttsu-wvd"
 }
 
 module "SIG" {
   source = "./modules/SIG"
 
   location = var.location
-  prefix   = "deployment"
+  prefix   = "ttsu-wvd"
 }
 
 module "log-analytics" {
@@ -44,4 +44,11 @@ module "wvd" {
 resource "azurerm_resource_group" "packer" {
   name     = "packer"
   location = var.location
+
+  tags = {
+    period      = "2021-07-31"
+    owner       = "ttsukui@networld.co.jp"
+    costcenter  = "psg2"
+  }
+
 }

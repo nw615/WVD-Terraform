@@ -6,6 +6,13 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rgStor" {
   location = var.location
   name     = "${var.prefix}-rg"
+
+  tags = {
+    period      = "2021-07-31"
+    owner       = "ttsukui@networld.co.jp"
+    costcenter  = "psg2"
+  }
+
 }
 
 ## Azure Storage Accounts requires a globally unique names

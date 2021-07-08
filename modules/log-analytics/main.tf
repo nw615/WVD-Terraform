@@ -5,6 +5,13 @@ provider "azurerm" {
 resource "azurerm_resource_group" "log" {
   name     = "${var.prefix}-resources"
   location = var.location
+  
+  tags = {
+    period      = "2021-07-31"
+    owner       = "ttsukui@networld.co.jp"
+    costcenter  = "psg2"
+  }
+
 }
 
 resource "azurerm_log_analytics_workspace" "lawksp" {
