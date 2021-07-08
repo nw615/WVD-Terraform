@@ -29,7 +29,7 @@ module "log-analytics" {
   source = "./modules/log-analytics"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = "ttsu-loga"
 }
 
 module "wvd" {
