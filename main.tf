@@ -15,21 +15,21 @@ module "storage" {
   source = "./modules/storage"
 
   location = var.location
-  prefix   = "ttsu-filestor"
+  prefix   = "ttsu-wvd"
 }
 
 module "SIG" {
   source = "./modules/SIG"
 
   location = var.location
-  prefix   = "ttsu-deployment"
+  prefix   = "ttsu-wvd"
 }
 
 module "log-analytics" {
   source = "./modules/log-analytics"
 
   location = var.location
-  prefix   = "ttsu-loga"
+  prefix   = "ttsu-wvd"
 }
 
 module "wvd" {
