@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "rgStor" {
 ## https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 ## Create a File Storage Account 
 resource "azurerm_storage_account" "Stor" {
-  name                     = "stor${random_string.random.id}"
+  name                     = var.stor_account_name
   resource_group_name      = azurerm_resource_group.rgStor.name
   location                 = azurerm_resource_group.rgStor.location
   account_tier             = "Premium"

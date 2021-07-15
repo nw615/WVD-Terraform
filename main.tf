@@ -6,7 +6,7 @@ module "AD" {
   source = "./modules/AD"
 
   location       = var.location
-  prefix         = "ttsu-wvd"
+  prefix         = var.customer_prefix
   admin_username = var.admin_username
   admin_password = var.admin_password
 }
@@ -15,28 +15,30 @@ module "storage" {
   source = "./modules/storage"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = var.customer_prefix
+  stor_account_name = var.customer_stor_account_name
 }
 
 module "SIG" {
   source = "./modules/SIG"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = var.customer_prefix
 }
 
 module "log-analytics" {
   source = "./modules/log-analytics"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = var.customer_prefix
+  loga_name = var.customer_loga_name
 }
 
 module "wvd" {
   source = "./modules/wvd"
 
   location = var.location
-  prefix   = "ttsu-wvd"
+  prefix   = var.customer_prefix
 }
 
 # Create resource group for use with Packer
