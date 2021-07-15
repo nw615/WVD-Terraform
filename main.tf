@@ -24,6 +24,7 @@ module "SIG" {
 
   location = var.location
   prefix   = var.customer_prefix
+  tags     = var.tags
 }
 
 module "log-analytics" {
@@ -47,10 +48,6 @@ resource "azurerm_resource_group" "packer" {
   name     = "ttsu-packer"
   location = var.location
 
-  tags = {
-    period      = "2021-07-31"
-    owner       = "ttsukui@networld.co.jp"
-    costcenter  = "psg2"
-  }
+  tags = var.tags
 
 }

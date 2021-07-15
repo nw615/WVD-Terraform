@@ -2,31 +2,27 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
-  location = var.location
-  name     = "${var.prefix}-rg"
-}
+#resource "azurerm_resource_group" "rg" {
+#  location = var.location
+#  name     = "${var.prefix}-rg"
+#}
 
 
 ## Created Shared Image Gallery
 resource "azurerm_shared_image_gallery" "sig" {
   name                = "WVDTFsig"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = "${var.prefix}-rg"
+  location            = var.location
   description         = "Shared images and things."
 
-  tags = {
-    period      = "2021-07-31"
-    owner       = "ttsukui@networld.co.jp"
-    costcenter  = "psg2"
-  }
+  tags = var.tags
 }
 
 resource "azurerm_shared_image" "example" {
   name                = "wvd-image"
   gallery_name        = azurerm_shared_image_gallery.sig.name
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = "${var.prefix}-rg"
+  location            = var.location
   os_type             = "Windows"
 
   identifier {

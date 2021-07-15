@@ -2,21 +2,19 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "log" {
-  name     = "${var.prefix}-resources"
-  location = var.location
-  
-  tags = {
-    period      = "2021-07-31"
-    owner       = "ttsukui@networld.co.jp"
-    costcenter  = "psg2"
-  }
-
-}
+#resource "azurerm_resource_group" "log" {
+#  name     = "${var.prefix}-rg"
+#  location = var.location
+#  
+#  tags = var.tags
+#
+#  }
+#
+#}
 
 resource "azurerm_log_analytics_workspace" "lawksp" {
   name                = var.loga_name
-  location            = azurerm_resource_group.log.location
-  resource_group_name = azurerm_resource_group.log.name
+  location            = var.location
+  resource_group_name = "${var.prefix}-rg"
   sku                 = "PerGB2018"
 }

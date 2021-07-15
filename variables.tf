@@ -22,6 +22,10 @@ variable "customer_loga_name" {
   description = "Customer log analytics Name"
 }
 
+variable "tags" {
+  description = "default tags"
+  type        = map(any)
+}
 
 ############################
 ##   WVD VM - Variables   ##

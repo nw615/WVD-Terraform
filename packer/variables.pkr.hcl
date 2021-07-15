@@ -1,13 +1,16 @@
 variable "subscription_id" {
   type = string
+  default = "81a2dbe1-d3e2-412e-84d5-d78f397f2d0b"
 }
 
 variable "client_id" {
   type = string
+  default = "33eb4e46-eea7-4d08-b3e1-e9b13a0e8607"
 }
 
 variable "client_secret" {
   type = string
+  default = 
 # sensitive values are hidden from outputs
   sensitive = true
 }
