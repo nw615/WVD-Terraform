@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 ##Create WVD Resource Group
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "example" {
   name     = "${var.prefix}-resources"
   location = var.location
 
@@ -22,17 +22,17 @@ resource "time_rotating" "wvd_token" {
 #Create WVD workspace
 resource "azurerm_virtual_desktop_workspace" "example" {
   name                = "${var.prefix}workspace"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
   friendly_name       = "WVD Workspace"
   description         = "A description of my workspace"
 }
 
 # Create WVD host pool
 resource "azurerm_virtual_desktop_host_pool" "example" {
-  resource_group_name      = azurerm_resource_group.rg.name
+  resource_group_name      = azurerm_resource_group.example.name
   name                     = "${var.prefix}hostpool"
-  location                 = azurerm_resource_group.rg.location
+  location                 = azurerm_resource_group.example.location
   validate_environment     = false
   type                     = "Pooled"
   maximum_sessions_allowed = 16
@@ -49,9 +49,9 @@ resource "azurerm_virtual_desktop_host_pool" "example" {
 
 # Create WVD DAG
 resource "azurerm_virtual_desktop_application_group" "example" {
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = azurerm_resource_group.example.name
   host_pool_id        = azurerm_virtual_desktop_host_pool.example.id
-  location            = azurerm_resource_group.rg.location
+  location            = azurerm_resource_group.example.location
   type                = "Desktop"
   name                = "${var.prefix}dag"
   friendly_name       = "WVDAppGroup"
