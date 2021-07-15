@@ -3,25 +3,20 @@ provider "azurerm" {
 }
 
 ## Create a Resource Group for Storage
-resource "azurerm_resource_group" "rgStor" {
-  location = var.location
-  name     = "${var.prefix}-rg"
-
-  tags = {
-    period      = "2021-07-31"
-    owner       = "ttsukui@networld.co.jp"
-    costcenter  = "psg2"
-  }
-
-}
+#resource "azurerm_resource_group" "rgStor" {
+#  location = var.location
+#  name     = "${var.prefix}-rg"
+#
+#  tags = var.tags
+#}
 
 ## Azure Storage Accounts requires a globally unique names
 ## https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 ## Create a File Storage Account 
 resource "azurerm_storage_account" "Stor" {
   name                     = var.stor_account_name
-  resource_group_name      = azurerm_resource_group.rgStor.name
-  location                 = azurerm_resource_group.rgStor.location
+  resource_group_name      = "${var.prefix}-rg"
+  location                 = var.location
   account_tier             = "Premium"
   account_replication_type = "LRS"
   account_kind             = "FileStorage"
