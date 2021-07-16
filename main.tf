@@ -58,5 +58,5 @@ resource "azurerm_resource_group" "packer" {
   name     = "ttsu-packer"
   location = var.location
   tags = var.tags
-  
+
 }
