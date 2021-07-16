@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 ## Create a Resource Group for Storage
 #resource "azurerm_resource_group" "rgStor" {
 #  location = var.location
