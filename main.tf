@@ -14,8 +14,8 @@ module "AD" {
 module "storage" {
   source = "./modules/storage"
 
-  location = var.location
-  prefix   = var.customer_prefix
+  location          = var.location
+  prefix            = var.customer_prefix
   stor_account_name = var.customer_stor_account_name
 }
 
@@ -30,8 +30,8 @@ module "SIG" {
 module "log-analytics" {
   source = "./modules/log-analytics"
 
-  location = var.location
-  prefix   = var.customer_prefix
+  location  = var.location
+  prefix    = var.customer_prefix
   loga_name = var.customer_loga_name
 }
 
