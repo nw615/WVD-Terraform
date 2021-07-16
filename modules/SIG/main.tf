@@ -12,6 +12,7 @@ resource "azurerm_shared_image_gallery" "sig" {
   description         = "Shared images and things."
 
   tags = var.tags
+
 }
 
 resource "azurerm_shared_image" "example" {
@@ -27,4 +28,4 @@ resource "azurerm_shared_image" "example" {
     sku       = "20h2-evd-o365pp"
   }
 }
-
+  

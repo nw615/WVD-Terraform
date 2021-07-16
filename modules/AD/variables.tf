@@ -14,3 +14,7 @@ variable "admin_password" {
   description = "Password for the Administrator account"
 }
 
+variable "tags" {
+  description = "default tags"
+  type        = map(any)
+}

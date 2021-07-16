@@ -2,12 +2,7 @@ resource "azurerm_resource_group" "example" {
   location = var.location
   name     = "${var.prefix}-rg"
 
-  tags = {
-    period      = "2021-07-31"
-    owner       = "ttsukui@networld.co.jp"
-    costcenter  = "psg2"
-  }
-
+  tags = var.tags
 }
 
 module "network" {

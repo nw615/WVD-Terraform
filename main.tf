@@ -9,6 +9,7 @@ module "AD" {
   prefix         = var.customer_prefix
   admin_username = var.admin_username
   admin_password = var.admin_password
+  tags           = var.tags
 }
 
 module "storage" {
