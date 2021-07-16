@@ -1,12 +1,3 @@
-#Create WVD Resource Group
-#resource "azurerm_resource_group" "example" {
-#  name     = "${var.prefix}-rg"
-#  location = var.location
-#
-#  tags = var.tags
-#
-#}
-
 resource "time_rotating" "wvd_token" {
   rotation_days = 30
 }
