@@ -43,12 +43,20 @@ module "wvd" {
   prefix   = var.customer_prefix
 }
 
+module "Optional" {
+  source = "./modules/Optional"
+
+  location = var.location
+  prefix   = var.customer_prefix
+  tags     = var.tags
+}
+
+
 # Create resource group for use with Packer
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
 resource "azurerm_resource_group" "packer" {
   name     = "ttsu-packer"
   location = var.location
-
   tags = var.tags
-
+  
 }
