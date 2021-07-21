@@ -22,10 +22,3 @@ resource "azurerm_storage_share" "FSShare2" {
   storage_account_name = azurerm_storage_account.Stor.name
   depends_on           = [azurerm_storage_account.Stor]
 }
-
-data "azurerm_subscription" "current" {
-}
-
-output "current_subscription_display_name" {
-  value = data.azurerm_subscription.current_subscription_display_name
-}
