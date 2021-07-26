@@ -46,7 +46,7 @@ resource "azurerm_subnet" "example" {
 resource "azurerm_public_ip" "example" {
   name                = "${var.prefix}bastionpip"
   location            = var.location
-  resource_group_name = "${var.prefix}-rg"
+  resource_group_name = azurerm_resource_group.example.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -54,7 +54,7 @@ resource "azurerm_public_ip" "example" {
 resource "azurerm_bastion_host" "example" {
   name                = "${var.prefix}bastion"
   location            = var.location
-  resource_group_name = "${var.prefix}-rg"
+  resource_group_name = azurerm_resource_group.example.name
 
   ip_configuration {
     name                 = "configuration"
