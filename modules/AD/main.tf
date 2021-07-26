@@ -41,3 +41,4 @@ module "active-directory-member" {
   admin_password               = var.admin_password
   subnet_id                    = module.network.domain_members_subnet_id
 }
+

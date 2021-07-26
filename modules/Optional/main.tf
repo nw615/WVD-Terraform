@@ -1,3 +1,8 @@
+resource "azurerm_resource_group" "example" {
+  location = var.location
+  name     = "${var.prefix}-rg"
+}
+
 #################################################
 #Create Azure Automation
 

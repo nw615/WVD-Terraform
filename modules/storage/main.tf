@@ -1,9 +1,14 @@
+resource "azurerm_resource_group" "example" {
+  location = var.location
+  name     = "${var.prefix}-rg"
+}
+
 ## Azure Storage Accounts requires a globally unique names
 ## https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 ## Create a File Storage Account 
 resource "azurerm_storage_account" "Stor" {
   name                     = var.stor_account_name
-  resource_group_name      = "${var.prefix}-rg"
+  resource_group_name      = azurerm_resource_group.example
   location                 = var.location
   account_tier             = "Premium"
   account_replication_type = "LRS"

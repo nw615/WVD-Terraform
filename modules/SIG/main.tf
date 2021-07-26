@@ -1,3 +1,8 @@
+resource "azurerm_resource_group" "example" {
+  location = var.location
+  name     = "${var.prefix}-rg"
+}
+
 ## Created Shared Image Gallery
 resource "azurerm_shared_image_gallery" "sig" {
   name                = "WVDTFsig"
