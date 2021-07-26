@@ -17,7 +17,7 @@ resource "azurerm_automation_account" "example" {
 }
 
 #Create Automation Runbook
-
+/*
 resource "azurerm_automation_runbook" "example" {
   name                    = "${var.prefix}WVDAutoScaleRunbookARMbased"
   location                = var.location
@@ -32,6 +32,8 @@ resource "azurerm_automation_runbook" "example" {
     uri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/c4935ffb69246a6058eb24f54640f53f69d3ac9f/101-automation-runbook-getvms/Runbooks/Get-AzureVMTutorial.ps1"
   }
 }
+*/
+
 #################################################
 
 #Create Azure Bastion
