@@ -18,7 +18,7 @@ resource "azurerm_virtual_desktop_workspace" "example" {
 
 # Create WVD host pool
 resource "azurerm_virtual_desktop_host_pool" "example" {
-  resource_group_name      = "${var.prefix}-rg"
+  resource_group_name      = azurerm_resource_group.example.name
   name                     = "${var.prefix}hostpool"
   location                 = var.location
   validate_environment     = false
@@ -37,7 +37,7 @@ resource "azurerm_virtual_desktop_host_pool" "example" {
 
 # Create WVD DAG
 resource "azurerm_virtual_desktop_application_group" "example" {
-  resource_group_name = "${var.prefix}-rg"
+  resource_group_name = azurerm_resource_group.example.name
   host_pool_id        = azurerm_virtual_desktop_host_pool.example.id
   location            = var.location
   type                = "Desktop"

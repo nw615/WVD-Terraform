@@ -21,7 +21,7 @@ resource "azurerm_automation_account" "example" {
 resource "azurerm_automation_runbook" "example" {
   name                    = "${var.prefix}WVDAutoScaleRunbookARMbased"
   location                = var.location
-  resource_group_name     = "${var.prefix}-rg"
+  resource_group_name     = azurerm_resource_group.example.name
   automation_account_name = azurerm_automation_account.example.name
   log_verbose             = "true"
   log_progress            = "true"
@@ -38,7 +38,7 @@ resource "azurerm_automation_runbook" "example" {
 
 resource "azurerm_subnet" "example" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = "${var.prefix}-rg"
+  resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = "${var.prefix}-network"
   address_prefixes     = ["10.0.3.0/27"]
 }
