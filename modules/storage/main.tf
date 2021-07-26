@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "example" {
 ## Create a File Storage Account 
 resource "azurerm_storage_account" "Stor" {
   name                     = var.stor_account_name
-  resource_group_name      = azurerm_resource_group.example
+  resource_group_name      = azurerm_resource_group.example.name
   location                 = var.location
   account_tier             = "Premium"
   account_replication_type = "LRS"

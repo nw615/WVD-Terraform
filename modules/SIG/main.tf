@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "example" {
 ## Created Shared Image Gallery
 resource "azurerm_shared_image_gallery" "sig" {
   name                = "WVDTFsig"
-  resource_group_name = "${var.prefix}-rg"
+  resource_group_name = azurerm_resource_group.example.name
   location            = var.location
   description         = "Shared images and things."
 

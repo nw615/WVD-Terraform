@@ -10,7 +10,7 @@ resource "time_rotating" "wvd_token" {
 #Create WVD workspace
 resource "azurerm_virtual_desktop_workspace" "example" {
   name                = "${var.prefix}workspace"
-  resource_group_name = "${var.prefix}-rg"
+  resource_group_name = azurerm_resource_group.example.name
   location            = var.location
   friendly_name       = "WVD Workspace"
   description         = "A description of my workspace"

@@ -9,8 +9,7 @@ resource "azurerm_resource_group" "example" {
 resource "azurerm_automation_account" "example" {
   name                = "${var.prefix}autoaccount"
   location            = var.location
-  resource_group_name = "${var.prefix}-rg"
-
+  resource_group_name = azurerm_resource_group.example.name
   sku_name = "Basic"
 
   tags = var.tags
