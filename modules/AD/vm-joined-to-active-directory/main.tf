@@ -1,5 +1,5 @@
 locals {
-  resource_group_name = "${var.prefix}-resources"
+  resource_group_name = "${var.prefix}-rg"
 }
 
 resource "azurerm_resource_group" "test" {
