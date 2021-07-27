@@ -5,12 +5,12 @@ variable "subscription_id" {
 
 variable "client_id" {
   type = string
-  default = "33eb4e46-eea7-4d08-b3e1-e9b13a0e8607"
+  default = "f7dd89c3-79bc-41ac-98e0-b2350b2c4275"
 }
 
 variable "client_secret" {
   type = string
-  default = 
+  default = "a2230104-eb9d-4661-be55-585d7afebb82"
 # sensitive values are hidden from outputs
   sensitive = true
 }
