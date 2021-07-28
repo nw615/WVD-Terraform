@@ -34,7 +34,7 @@ module "active-directory-member" {
   location            = azurerm_resource_group.example.location
   prefix              = var.prefix
 
-  active_directory_domain_name = "${var.prefix}.local"
+  active_directory_domain_name = "${var.prefix}.com"
   active_directory_username    = var.admin_username
   active_directory_password    = var.admin_password
   admin_username               = var.admin_username
