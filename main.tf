@@ -1,5 +1,5 @@
 provider "azurerm" {
-  # Configuration options
+  features {}
 }
 
 module "AD" {
