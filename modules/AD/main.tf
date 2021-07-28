@@ -19,7 +19,7 @@ module "active-directory-domain" {
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
 
-  active_directory_domain_name  = "${var.prefix}.local"
+  active_directory_domain_name  = "${var.prefix}.com"
   active_directory_netbios_name = var.prefix
   admin_username                = var.admin_username
   admin_password                = var.admin_password
