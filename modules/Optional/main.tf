@@ -37,7 +37,7 @@ resource "azurerm_automation_runbook" "example" {
 #################################################
 
 #Create Azure Bastion
-
+/*
 resource "azurerm_subnet" "example" {
   name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.example.name
@@ -64,3 +64,4 @@ resource "azurerm_bastion_host" "example" {
     public_ip_address_id = azurerm_public_ip.example.id
   }
 }
+*/
