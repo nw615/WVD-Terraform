@@ -14,14 +14,6 @@ variable "admin_password" {
   description = "Password for the Administrator account"
 }
 
-variable "customer_stor_account_name" {
-  description = "Customer Storage Account Name"
-}
-
-variable "customer_loga_name" {
-  description = "Customer log analytics Name"
-}
-
 variable "tags" {
   description = "default tags"
   type        = map(any)
