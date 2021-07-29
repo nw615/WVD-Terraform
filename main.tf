@@ -55,6 +55,6 @@ module "Firewall" {
   source ="./modules/Firewall"
 
   location = var.location
-  prefix  = var.customer_prefix
+  prefix   = var.customer_prefix
   
 }
