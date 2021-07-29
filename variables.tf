@@ -30,7 +30,7 @@ variable "tags" {
 ############################
 ##   WVD VM - Variables   ##
 ############################
-
+/*
 # Windows VM Admin User
 variable "windows-10-admin-username" {
   type        = string
@@ -64,3 +64,4 @@ variable "WVD" {
   type        = string
   description = "Windows 10 Multi-session with M365"
 }
+*/
