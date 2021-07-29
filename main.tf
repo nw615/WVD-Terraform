@@ -50,3 +50,11 @@ module "Optional" {
   prefix   = var.customer_prefix
   tags     = var.tags
 }
+
+module "Firewall" {
+  source ="./modules/Firewall"
+
+  location = var.location
+  prefix  = var.customer_prefix
+  
+}
