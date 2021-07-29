@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "example" {
   location = var.location
-  name     = "${var.prefix}-rg"
+  name     = "rg-${var.prefix}"
 }
 
 resource "time_rotating" "wvd_token" {
