@@ -17,7 +17,7 @@ module "storage" {
 
   location          = var.location
   prefix            = var.customer_prefix
-  stor_account_name = var.customer_stor_account_name
+  stor_account_name = "${var.customer_prefix}stor"
 }
 
 module "SIG" {
@@ -33,7 +33,7 @@ module "log-analytics" {
 
   location  = var.location
   prefix    = var.customer_prefix
-  loga_name = var.customer_loga_name
+  loga_name = "${var.customer_prefix}loga"
 }
 
 module "wvd" {
