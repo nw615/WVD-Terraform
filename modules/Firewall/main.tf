@@ -108,8 +108,9 @@ resource "azurerm_firewall_network_rule_collection" "example" {
       "UDP",
     ]
   }
+}
 
-  resource "azurerm_firewall_application_rule_collection" "example" {
+resource "azurerm_firewall_application_rule_collection" "example" {
   name                = "${var.prefix}apprcollection"
   azure_firewall_name = azurerm_firewall.example.name
   resource_group_name = azurerm_resource_group.example.name
