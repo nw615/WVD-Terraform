@@ -56,27 +56,12 @@ resource "azurerm_firewall_nat_rule_collection" "example" {
 
   rule {
     name = "testrule"
-
-    source_addresses = [
-      "10.0.0.0/16",
-    ]
-
-    destination_ports = [
-      "53",
-    ]
-
-    destination_addresses = [
-      azurerm_public_ip.example.ip_address
-    ]
-
+    source_addresses = ["10.0.0.0/16",]
+    destination_ports = ["53",]
+    destination_addresses = [azurerm_public_ip.example.ip_address]
     translated_port = 53
-
     translated_address = "8.8.8.8"
-
-    protocols = [
-      "TCP",
-      "UDP",
-    ]
+    protocols = ["TCP","UDP",]
   }
 }
 
@@ -89,15 +74,8 @@ resource "azurerm_firewall_network_rule_collection" "example" {
 
   rule {
     name = "testrule"
-
-    source_addresses = [
-      "10.0.0.0/16",
-    ]
-
-    destination_ports = [
-      "53",
-    ]
-
+    source_addresses = ["10.0.0.0/16",]
+    destination_ports = ["53",]
     destination_addresses = [
       "8.8.8.8",
       "8.8.4.4",
@@ -119,15 +97,12 @@ resource "azurerm_firewall_application_rule_collection" "example" {
 
   rule {
     name = "testrule"
-
     source_addresses = [
       "10.0.0.0/16",
     ]
-
     target_fqdns = [
       "*.google.com",
     ]
-
     protocol {
       port = "443"
       type = "Https"
