@@ -51,6 +51,7 @@ module "Optional" {
   tags     = var.tags
 }
 
+/*
 module "Firewall" {
   source ="./modules/Firewall"
 
@@ -58,3 +59,4 @@ module "Firewall" {
   prefix   = var.customer_prefix
   
 }
+*/
